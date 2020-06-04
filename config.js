@@ -22,7 +22,7 @@ module.exports = {
       clientId: CLIENT_ID,
       clientSecret: CLIENT_SECRET,
       issuer: ISSUER,
-      appBaseUrl: 'http://localhost:3000',
+      appBaseUrl: 'https://okta-project.herokuapp.com/',
       scope: 'openid profile email',
     //   testing: {
     //     disableHttpsCheck: OKTA_TESTING_DISABLEHTTPSCHECK
