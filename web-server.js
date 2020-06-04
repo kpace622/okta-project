@@ -1,5 +1,5 @@
 const express = require('express');
-const session = require('express-session');
+const session = require('connect-session-knex');
 const path = require('path');
 const dotenv = require('dotenv');
 const fs = require('fs');
