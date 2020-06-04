@@ -1,8 +1,10 @@
 const express = require('express');
-const session = require('connect-session-knex');
+const session = require('express-session');
 const path = require('path');
 const dotenv = require('dotenv');
 const fs = require('fs');
+const KnexSessionStore = require("connect-session-knex")(session);
+const store = new KnexSessionStore(/* options here */)
 const { ExpressOIDC } = require('@okta/oidc-middleware');
 
 module.exports = function WebServer(config, extraOidcOptions) {
@@ -30,7 +32,8 @@ module.exports = function WebServer(config, extraOidcOptions) {
   app.use(session({
     secret: SERVER_SECRET,
     resave: true,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: store
   }));
 
   // Provide the configuration to the view layer because we show it on the homepage
