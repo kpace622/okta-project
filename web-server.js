@@ -54,7 +54,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
   })
 
   app.post('/api/view', (req, res) => {
-    console.log(req.body)
+    console.log(req.headers)
     if(req.body.data.challenge) {
         res.setStatus(200);
         res.setContentType('text/plain');
