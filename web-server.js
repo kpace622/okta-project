@@ -62,11 +62,16 @@ module.exports = function WebServer(config, extraOidcOptions) {
         res.status(200);
         res.contentType('text/plain');
         res.send(req.body.challenge)
-        .then(message => {
-          console.log({message})
-        })
+    } else {
+      if(req.body.event.text) {
+        console.log(req.body.event.text)
+      }
     }
 })
+
+  // app.get('/api/view', (req, res) => {
+  //   req.body.
+  // })
 
   oidc.on('ready', () => {
     // eslint-disable-next-line no-console
