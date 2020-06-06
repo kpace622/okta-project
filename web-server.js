@@ -63,7 +63,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
         res.contentType('text/plain');
         res.send(req.body.challenge)
         .then(message => {
-          res.json({message})
+          console.log({message})
         })
     }
 })
