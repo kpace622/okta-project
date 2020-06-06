@@ -59,8 +59,8 @@ module.exports = function WebServer(config, extraOidcOptions) {
     // console.log(Object.keys(req))
     console.log(req.body)
     if(req.body.challenge) {
-        res.setStatus(200);
-        res.setContentType('text/plain');
+        res.status(200);
+        res.contentType('text/plain');
         res.send(req.body.challenge);
     }
 })
