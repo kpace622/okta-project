@@ -58,13 +58,14 @@ module.exports = function WebServer(config, extraOidcOptions) {
   app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     // console.log(Object.keys(req))
     console.log(req.body)
+    console.log(req.body.event.text)
     if(req.body.challenge) {
         res.status(200);
         res.contentType('text/plain');
         res.send(req.body.challenge)
     }
-    console.log(req.body.event.text)
 })
+
 
   // app.get('/api/view', (req, res) => {
   //   req.body.
