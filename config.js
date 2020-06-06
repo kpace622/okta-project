@@ -17,7 +17,7 @@ var CLIENT_SECRET = process.env.CLIENT_SECRET
 
 module.exports = {
   webServer: {
-    port: process.env.PORT,
+    port: process.env.PORT || 3000,
     oidc: {
       clientId: CLIENT_ID,
       clientSecret: CLIENT_SECRET,

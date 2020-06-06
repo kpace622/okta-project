@@ -53,6 +53,17 @@ module.exports = function WebServer(config, extraOidcOptions) {
     res.send({message: 'Server is up'})
   })
 
+  app.post('/api/view', (req, res) => {
+    console.log('check')
+    if(req.body.data.challenge) {
+        res.setStatus(200);
+        res.setContentType('text/plain');
+        res.send(req.body.data.challenge);
+    } else {
+        console.log('Slack Payload: ' + req.body.dataString);
+    }
+})
+
   oidc.on('ready', () => {
     // eslint-disable-next-line no-console
     app.listen(config.port, () => console.log(`App started on port ${config.port}`));
