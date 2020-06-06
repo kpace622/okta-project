@@ -53,7 +53,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
     res.send({message: 'Server is up'})
   })
 
-  app.post('/api/view', (req, res) => {
+  app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     console.log(req.headers)
     if(req.body.data.challenge) {
         res.setStatus(200);
