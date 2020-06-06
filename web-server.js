@@ -58,12 +58,10 @@ module.exports = function WebServer(config, extraOidcOptions) {
   app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     // console.log(Object.keys(req))
     console.log(req.body)
-    if(req.body.data.challenge) {
+    if(req.body.challenge) {
         res.setStatus(200);
         res.setContentType('text/plain');
-        res.send(req.body.data.challenge);
-    } else {
-        console.log('Slack Payload: ' + req.body.dataString);
+        res.send(req.body.challenge);
     }
 })
 
