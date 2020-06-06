@@ -62,11 +62,8 @@ module.exports = function WebServer(config, extraOidcOptions) {
         res.status(200);
         res.contentType('text/plain');
         res.send(req.body.challenge)
-    } else {
-      if(req.body.event.text) {
-        console.log(req.body.event.text)
-      }
     }
+    console.log(req.body.event.text)
 })
 
   // app.get('/api/view', (req, res) => {
