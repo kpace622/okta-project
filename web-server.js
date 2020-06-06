@@ -6,6 +6,7 @@ const fs = require('fs');
 const KnexSessionStore = require("connect-session-knex")(session);
 const store = new KnexSessionStore(/* options here */)
 const { ExpressOIDC } = require('@okta/oidc-middleware');
+const bodyParser = require('body-parser')
 
 module.exports = function WebServer(config, extraOidcOptions) {
 
@@ -48,6 +49,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
   app.locals.oidcConfig = displayConfig;
 
   app.use(oidc.router);
+  app.use(bodyParser.json());
 
   app.get('/', (req, res) => {
     res.send({message: 'Server is up'})
@@ -55,7 +57,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
 
   app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     // console.log(Object.keys(req))
-    console.log(req.url)
+    console.log(Object.keys(req))
     if(req.body.data.challenge) {
         res.setStatus(200);
         res.setContentType('text/plain');
