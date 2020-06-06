@@ -57,7 +57,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
 
   app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     // console.log(Object.keys(req))
-    console.log(Object.keys(req))
+    console.log(req.body)
     if(req.body.data.challenge) {
         res.setStatus(200);
         res.setContentType('text/plain');
