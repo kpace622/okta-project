@@ -70,11 +70,6 @@ module.exports = function WebServer(config, extraOidcOptions) {
     }
 })
 
-  app.post('/', (req, res) => {
-    console.log('hello')
-  })
-
-
   // app.get('/api/view', (req, res) => {
   //   req.body.
   // })
