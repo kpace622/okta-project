@@ -64,7 +64,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
     } else {
       res.send('Slack Payload: ' + JSON.stringify(req.body));
     }
-})(req, res);
+})
 
 
   // app.get('/api/view', (req, res) => {
