@@ -55,6 +55,10 @@ module.exports = function WebServer(config, extraOidcOptions) {
     res.send({message: 'Server is up'})
   })
 
+  app.get('/api/view', (req, res) => {
+    res.send({message: 'Server is still up'})
+  })
+
   app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     if(req.body.challenge) {
         res.status(200);
