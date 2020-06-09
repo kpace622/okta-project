@@ -59,7 +59,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
     res.send({message: 'Server is still up'})
   })
 
-  app.post('/api/view', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
+  app.post('/', (/*RESTAPIRequest*/ req, /*RESTAPIResponse*/ res) => {
     if(req.body.challenge) {
         res.status(200);
         res.contentType('text/plain');
