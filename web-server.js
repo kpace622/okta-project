@@ -66,6 +66,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
         console.log(req.body)
         res.send(req.body.challenge)
     } else {
+      req.body.token
       console.log('test');
     }
 })
