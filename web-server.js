@@ -66,7 +66,7 @@ module.exports = function WebServer(config, extraOidcOptions) {
         console.log(req.body)
         res.send(req.body.challenge)
     } else {
-      res.send('Slack Payload: ' + JSON.stringify(req.body));
+      console.log('test');
     }
 })
 
